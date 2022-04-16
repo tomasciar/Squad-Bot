@@ -1,0 +1,10 @@
+{
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0"
+  }
+}
