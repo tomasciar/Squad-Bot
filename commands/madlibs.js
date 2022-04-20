@@ -77,7 +77,8 @@ module.exports = {
     const weapon = interaction.options.getString("weapon");
 
     // Randomly picks which story to use
-    const storyNumber = Math.floor(Math.random() * 10);
+    const NUMBER_OF_STORIES = 5;
+    const storyNumber = Math.floor(Math.random() * NUMBER_OF_STORIES);
     const stories = [
       `Only ${number} minutes left till the school bell rings, and when 
       it does, I'm going to attack ${person2} with my ${weapon}. It's 
@@ -101,11 +102,26 @@ module.exports = {
       Feeding ${person2} made me hungry, so I went to get a BeaverTail 
       for myself and ${person1}. Unfortunately, the BeaverTail made my 
       stomach upset, and I did a number ${number} in my pants. I knew 
-      we should have gone to ${location} instead.`
+      we should have gone to ${location} instead.`,
+
+      `6:00 in the morning. I wake up to sound of my ${noun} beeping. 
+      ${verb} out of bed, I almost trip on my friend ${person2}'s body. 
+      They were laying on the ground because we had a sleepover the 
+      night before. In fact, I had ${number} friends sleep over last night 
+      night. It was ${adjective}. We had a disagreement in the backyard and
+      it ended with all of us at ${location}. We had to leave my other 
+      friend ${person1} behind because he ate too much ${food}.`,
+
+      `It was a(n) ${adjective} day. I woke up to the smell of ${food} 
+      roasting in the oven. I immediately start ${verb} down the stairs 
+      to see if I can gobble up the grub. It was too late. ${person1} 
+      already ate all of the food. I was so mad that I used my finishing 
+      move on him with my ${weapon}. It was so powerful that he 
+      was transported to the ${location} realm.`
     ];
 
     await interaction.reply({
-      content: stories[3],
+      content: stories[storyNumber],
       ephemeral: false
     });
   }
