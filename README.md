@@ -1,5 +1,5 @@
 # Squad-Bot
-Discord bot for quick games to play while idling. List of (slash) commands:
+Discord bot for games to play while idling. List of (slash) commands:
 
 ## /madlibs
 Parameters: `person1`, `person2`, `number`, `adjective`, `verb`, `noun`, `occupation`, `location`, `food`, `weapon` (all strings). <br />
