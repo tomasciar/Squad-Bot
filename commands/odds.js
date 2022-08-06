@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('repeat')
+    .setName('odds')
     .setDescription('Repeats everything said after the command')
     .addStringOption(option => option.setName('input').setDescription('Enter a sentence').setRequired(true)),
 
