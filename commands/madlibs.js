@@ -1,80 +1,37 @@
-const { SlashCommandBuilder } = require("@discordjs/builders");
+const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("madlibs")
-    .setDescription("Play a game of madlibs")
-    .addStringOption((option) =>
-      option
-        .setName("person1")
-        .setDescription("Enter a person's name")
-        .setRequired(true)
+    .setName('madlibs')
+    .setDescription('Play a game of madlibs')
+    .addStringOption(option => option.setName('person1').setDescription("Enter a person's name").setRequired(true))
+    .addStringOption(option =>
+      option.setName('person2').setDescription("Enter another person's name").setRequired(true)
     )
-    .addStringOption((option) =>
-      option
-        .setName("person2")
-        .setDescription("Enter another person's name")
-        .setRequired(true)
+    .addStringOption(option => option.setName('number').setDescription('Enter a number').setRequired(true))
+    .addStringOption(option =>
+      option.setName('adjective').setDescription('Enter an adjective (ex. happy, sad)').setRequired(true)
     )
-    .addStringOption((option) =>
-      option
-        .setName("number")
-        .setDescription("Enter a number")
-        .setRequired(true)
+    .addStringOption(option => option.setName('verb').setDescription('Enter an verb (ex. running)').setRequired(true))
+    .addStringOption(option =>
+      option.setName('noun').setDescription('Enter a noun (ex. tree, station)').setRequired(true)
     )
-    .addStringOption((option) =>
-      option
-        .setName("adjective")
-        .setDescription("Enter an adjective (ex. happy, sad)")
-        .setRequired(true)
-    )
-    .addStringOption((option) =>
-      option
-        .setName("verb")
-        .setDescription("Enter an verb (ex. running)")
-        .setRequired(true)
-    )
-    .addStringOption((option) =>
-      option
-        .setName("noun")
-        .setDescription("Enter a noun (ex. tree, station)")
-        .setRequired(true)
-    )
-    .addStringOption((option) =>
-      option
-        .setName("occupation")
-        .setDescription("Enter an occupation")
-        .setRequired(true)
-    )
-    .addStringOption((option) =>
-      option
-        .setName("location")
-        .setDescription("Enter a location")
-        .setRequired(true)
-    )
-    .addStringOption((option) =>
-      option
-        .setName("food")
-        .setDescription("Enter a type of food")
-        .setRequired(true)
-    )
-    .addStringOption((option) =>
-      option
-        .setName("weapon")
-        .setDescription("Enter a weapon")
-        .setRequired(true)
-    ),
+    .addStringOption(option => option.setName('occupation').setDescription('Enter an occupation').setRequired(true))
+    .addStringOption(option => option.setName('location').setDescription('Enter a location').setRequired(true))
+    .addStringOption(option => option.setName('food').setDescription('Enter a type of food').setRequired(true))
+    .addStringOption(option => option.setName('weapon').setDescription('Enter a weapon').setRequired(true)),
+
   async execute(interaction) {
-    const person1 = interaction.options.getString("person1");
-    const person2 = interaction.options.getString("person2");
-    const number = interaction.options.getString("number");
-    const adjective = interaction.options.getString("adjective");
-    const verb = interaction.options.getString("verb");
-    const noun = interaction.options.getString("noun");
-    const occupation = interaction.options.getString("occupation");
-    const location = interaction.options.getString("location");
-    const food = interaction.options.getString("food");
-    const weapon = interaction.options.getString("weapon");
+    const person1 = interaction.options.getString('person1');
+    const person2 = interaction.options.getString('person2');
+    const number = interaction.options.getString('number');
+    const adjective = interaction.options.getString('adjective');
+    const verb = interaction.options.getString('verb');
+    const noun = interaction.options.getString('noun');
+    const occupation = interaction.options.getString('occupation');
+    const location = interaction.options.getString('location');
+    const food = interaction.options.getString('food');
+    const weapon = interaction.options.getString('weapon');
 
     // Randomly picks which story to use
     const NUMBER_OF_STORIES = 5;
